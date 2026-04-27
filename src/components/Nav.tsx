@@ -59,14 +59,8 @@ export default function Nav() {
     <header style={{ position:"fixed", top:0, left:0, right:0, zIndex:50, background:S.white, borderBottom:"1px solid #e5e7eb", boxShadow:"0 1px 8px rgba(0,0,0,0.06)" }}>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 1.5rem", display:"flex", alignItems:"center", justifyContent:"space-between", height:64 }}>
         {/* Logo */}
-        <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:10 }}>
-          <div style={{ width:36, height:36, borderRadius:"50%", background:S.navy, display:"flex", alignItems:"center", justifyContent:"center" }}>
-            <span style={{ fontFamily:S.display, fontWeight:800, fontSize:14, color:S.orange }}>CS</span>
-          </div>
-          <div>
-            <div style={{ fontFamily:S.display, fontWeight:700, fontSize:18, color:S.navy, lineHeight:1.1 }}>Cold Sun</div>
-            <div style={{ fontFamily:S.font, fontWeight:600, fontSize:10, color:S.orange, letterSpacing:"0.14em", textTransform:"uppercase", lineHeight:1 }}>Global</div>
-          </div>
+        <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:0, flexShrink:0 }}>
+          <img src="/coldsunglobal_logo.png" alt="Cold Sun Global" style={{ height:48, width:"auto" }} />
         </Link>
 
         {/* Desktop nav */}
