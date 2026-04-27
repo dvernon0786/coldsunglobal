@@ -23,7 +23,7 @@ export default function Footer() {
         <div style={{ maxWidth:1200, margin:"0 auto", display:"grid", gridTemplateColumns:"2fr 1fr 1fr 1fr", gap:48 }}>
           {/* Brand col */}
           <div>
-            <img src="/coldsunglobal_logo.png" alt="Cold Sun Global" style={{ height:48, width:"auto", marginBottom:16 }} />
+            <img src="/coldsunglobal_logo-footer.png" alt="Cold Sun Global" style={{ height:48, width:"auto", marginBottom:16 }} />
             <p style={{ fontFamily:S.font, fontSize:13, color:"rgba(255,255,255,0.5)", lineHeight:1.7, marginBottom:20 }}>
               The global umbrella brand of the Cold Sun Group — delivering enterprise transformation across North America, UK, EU, and India.
             </p>
