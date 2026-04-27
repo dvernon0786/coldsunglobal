@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #04365f;
+  --navy-deep: #02243f;
+  --navy-mid: #0a4a7a;
+  --orange: #f68900;
+  --orange-light: #ffa733;
+  --orange-pale: #fff4e6;
+  --white: #ffffff;
+  --off-white: #f8f9fb;
+  --grey-light: #e8ecf0;
+  --grey-text: #4a5568;
+  --foreground: #0d1b2a;
+  --background: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+/* Logo scroll animation */
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-logos { animation: scroll-logos 35s linear infinite; }
+.animate-scroll-logos:hover { animation-play-state: paused; }
+
+/* Mobile responsive grids - applied via style tags in components */
+@media (max-width: 768px) {
+  .responsive-grid-2,
+  .responsive-grid-3,
+  .responsive-grid-4,
+  .responsive-grid-5 {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-flex-col {
+    flex-direction: column !important;
+  }
+  .responsive-hide {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .nav-desktop { display: none !important; }
+  .nav-mobile-btn { display: block !important; }
+}
