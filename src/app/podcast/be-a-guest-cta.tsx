@@ -24,7 +24,7 @@ export default function BeAGuestCTA() {
           fontSize: "1rem", color: "rgba(255,255,255,0.65)",
           lineHeight: 1.75, maxWidth: 520, margin: "0 auto 36px",
         }}>
-          With discussions focused on real-world implementation experience across field service, ERP, and AI, we always welcome new voices. If you're a practitioner with a genuine story to tell, get in touch.
+          With discussions focused on real-world implementation experience across field service, ERP, and AI, we always welcome new voices. If you&apos;re a practitioner with a genuine story to tell, get in touch.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <Link

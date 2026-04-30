@@ -160,7 +160,7 @@ export default function PodcastHero({ spotifyShowId }: { spotifyShowId: string }
           <p style={{
             fontSize: 13, color: "#8a95a0", marginTop: 14, textAlign: "center",
           }}>
-            Can't see the player?{" "}
+            Can&apos;t see the player?{" "}
             <a
               href={`https://open.spotify.com/show/${spotifyShowId}`}
               target="_blank"
