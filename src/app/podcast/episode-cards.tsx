@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 interface Episode {
   num: number;
+  episodeId: string | null;
   title: string;
   desc: string;
   date: string;
@@ -12,8 +15,28 @@ interface Episode {
 }
 
 export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Episode[]; spotifyShowId: string }) {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+
+  const activeEp = activeIdx !== null ? episodes[activeIdx] : null;
+
+  const embedSrc = activeEp?.episodeId
+    ? `https://open.spotify.com/embed/episode/${activeEp.episodeId}?utm_source=generator&theme=0`
+    : `https://open.spotify.com/embed/show/${spotifyShowId}?utm_source=generator&theme=0`;
+
+  const openHref = activeEp?.href ?? `https://open.spotify.com/show/${spotifyShowId}`;
+
   return (
     <section style={{ padding: "72px 24px", background: "var(--off-white)" }}>
+      <style>{`
+        .ep-card { transition: transform 0.18s, box-shadow 0.18s; }
+        .ep-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(4,54,95,0.11); }
+        .ep-card:hover .ep-play { opacity: 1 !important; }
+        @media (max-width: 768px) {
+          .ep-zone { grid-template-columns: 1fr !important; }
+          .ep-player { position: static !important; }
+        }
+      `}</style>
+
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <p style={{
           fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase",
@@ -28,142 +51,219 @@ export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Ep
         }}>
           Latest Shows
         </h2>
-        <div style={{
-          width: 52, height: 4, background: "var(--orange)",
-          borderRadius: 2, marginBottom: 48,
-        }} />
+        <div style={{ width: 52, height: 4, background: "var(--orange)", borderRadius: 2, marginBottom: 48 }} />
 
-        <div style={{
+        {/* Two-zone layout: sticky player left, episode list right */}
+        <div className="ep-zone" style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
-          gap: 24,
+          gridTemplateColumns: "1fr 1fr",
+          gap: 40,
+          alignItems: "start",
         }}>
-          {episodes.map((ep) => (
-            <a
-              key={ep.num}
-              href={ep.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <article style={{
-                background: "#fff",
-                borderRadius: 16,
-                overflow: "hidden",
-                border: "1px solid #e4e8ed",
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                transition: "transform 0.2s, box-shadow 0.2s",
-                cursor: "pointer",
-              }}
-                onMouseOver={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 32px rgba(4,54,95,0.12)";
-                }}
-                onMouseOut={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
+
+          {/* LEFT — sticky player */}
+          <div className="ep-player" style={{ position: "sticky", top: 88 }}>
+            <div style={{
+              borderRadius: 16, overflow: "hidden",
+              border: "1px solid #e4e8ed",
+              boxShadow: "0 4px 24px rgba(4,54,95,0.08)",
+              marginBottom: 16,
+            }}>
+              <iframe
+                key={embedSrc}
+                src={embedSrc}
+                width="100%"
+                height="352"
+                style={{ border: "none", display: "block" }}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title={activeEp ? activeEp.title : "The Cold Sun Podcast"}
+              />
+            </div>
+
+            {/* Player caption */}
+            <div style={{ paddingLeft: 4 }}>
+              {activeEp ? (
+                <>
+                  <p style={{
+                    fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
+                    textTransform: "uppercase", color: "var(--orange)", marginBottom: 4,
+                  }}>
+                    Now Playing
+                  </p>
+                  <p style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: "0.95rem", fontWeight: 700, color: "var(--navy)",
+                    lineHeight: 1.4, marginBottom: 8,
+                  }}>
+                    {activeEp.title}
+                  </p>
+                </>
+              ) : (
+                <p style={{
+                  fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
+                  textTransform: "uppercase", color: "#9aa5b0", marginBottom: 8,
+                }}>
+                  Select an episode to play
+                </p>
+              )}
+              <a
+                href={openHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: 12, fontWeight: 600, color: "var(--orange)",
+                  textDecoration: "none",
                 }}
               >
-                {/* Artwork header — matches FoFS episode card style */}
-                <div style={{
-                  background: ep.bgColor,
-                  height: 180,
-                  display: "flex",
-                  alignItems: "flex-end",
-                  justifyContent: "space-between",
-                  padding: "16px 20px",
-                }}>
-                  <span style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: 52, fontWeight: 800,
-                    color: "rgba(255,255,255,0.25)",
-                    lineHeight: 1,
-                  }}>
-                    {String(ep.num).padStart(2, "0")}
-                  </span>
-                  <span style={{
-                    fontSize: 11, fontWeight: 700, letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    background: "rgba(255,255,255,0.18)",
-                    color: "#fff",
-                    padding: "5px 12px", borderRadius: 50,
-                  }}>
-                    {ep.badge}
-                  </span>
-                </div>
+                Open in Spotify →
+              </a>
+            </div>
+          </div>
 
-                {/* Content */}
-                <div style={{
-                  padding: "22px 22px 20px",
-                  display: "flex", flexDirection: "column", gap: 10, flex: 1,
-                }}>
-                  <h3 style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: "1rem", fontWeight: 700, lineHeight: 1.4,
-                    color: "var(--navy)", margin: 0,
-                  }}>
-                    {ep.title}
-                  </h3>
-                  <p style={{
-                    fontSize: 13, color: "#6b7a8a", lineHeight: 1.65, margin: 0,
-                  }}>
-                    {ep.desc}
-                  </p>
+          {/* RIGHT — episode list */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {episodes.map((ep, idx) => {
+              const isActive = activeIdx === idx;
+              return (
+                <div
+                  key={ep.num}
+                  role="button"
+                  tabIndex={0}
+                  className="ep-card"
+                  onClick={() => setActiveIdx(idx)}
+                  onKeyDown={(e) => e.key === "Enter" && setActiveIdx(idx)}
+                  style={{
+                    background: "#fff",
+                    borderRadius: 14,
+                    overflow: "hidden",
+                    border: isActive ? "2px solid var(--orange)" : "1.5px solid #e4e8ed",
+                    boxShadow: isActive ? "0 0 0 3px rgba(246,137,0,0.12)" : "none",
+                    display: "flex",
+                    cursor: "pointer",
+                    outline: "none",
+                    transition: "border 0.15s, box-shadow 0.15s",
+                  }}
+                >
+                  {/* Artwork strip */}
                   <div style={{
-                    marginTop: "auto", paddingTop: 14,
-                    borderTop: "1px solid #edf0f3",
-                    display: "flex", alignItems: "center",
-                    justifyContent: "space-between",
+                    background: ep.bgColor,
+                    width: 88,
+                    flexShrink: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    padding: "12px 0",
                   }}>
-                    <span style={{ fontSize: 12, color: "#9aa5b0" }}>
-                      {ep.date} · {ep.duration}
-                    </span>
+                    {/* Episode number */}
                     <span style={{
-                      fontSize: 12, fontWeight: 700,
-                      color: "var(--orange)",
-                      display: "flex", alignItems: "center", gap: 4,
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: 22, fontWeight: 800,
+                      color: "rgba(255,255,255,0.3)",
+                      lineHeight: 1,
                     }}>
-                      Listen
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
+                      {String(ep.num).padStart(2, "0")}
+                    </span>
+
+                    {/* Play icon — shows on hover or when active */}
+                    <div className="ep-play" style={{
+                      position: "absolute",
+                      inset: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "rgba(0,0,0,0.18)",
+                      opacity: isActive ? 1 : 0,
+                      transition: "opacity 0.15s",
+                    }}>
+                      {isActive ? (
+                        /* Pause bars when active */
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                          <rect x="6" y="4" width="4" height="16" rx="1" />
+                          <rect x="14" y="4" width="4" height="16" rx="1" />
+                        </svg>
+                      ) : (
+                        /* Play triangle on hover */
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div style={{ padding: "14px 16px", flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                      <span style={{
+                        fontSize: 10, fontWeight: 700, letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        background: isActive ? "var(--orange)" : "var(--off-white)",
+                        color: isActive ? "#fff" : "#9aa5b0",
+                        padding: "3px 8px", borderRadius: 50,
+                        transition: "background 0.15s, color 0.15s",
+                        whiteSpace: "nowrap",
+                      }}>
+                        {ep.badge}
+                      </span>
+                      {isActive && (
+                        <span style={{
+                          fontSize: 10, fontWeight: 700, letterSpacing: "0.08em",
+                          textTransform: "uppercase", color: "var(--orange)",
+                        }}>
+                          ● Now Playing
+                        </span>
+                      )}
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: "0.9rem", fontWeight: 700, lineHeight: 1.35,
+                      color: isActive ? "var(--navy)" : "var(--navy)",
+                      margin: "0 0 6px",
+                      overflow: "hidden",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                    } as React.CSSProperties}>
+                      {ep.title}
+                    </h3>
+                    <span style={{ fontSize: 11, color: "#9aa5b0" }}>
+                      {ep.date} · {ep.duration}
                     </span>
                   </div>
                 </div>
-              </article>
-            </a>
-          ))}
-        </div>
+              );
+            })}
 
-        {/* Load More — matches FoFS pattern */}
-        <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a
-            href={`https://open.spotify.com/show/${spotifyShowId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              border: "2px solid var(--navy)", color: "var(--navy)",
-              background: "transparent",
-              padding: "12px 32px", borderRadius: 8,
-              fontWeight: 700, fontSize: 14,
-              textDecoration: "none", letterSpacing: "0.02em",
-              transition: "background 0.15s, color 0.15s",
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "var(--navy)";
-              (e.currentTarget as HTMLElement).style.color = "#fff";
-            }}
-            onMouseOut={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.color = "var(--navy)";
-            }}
-          >
-            All Episodes on Spotify →
-          </a>
+            {/* All Episodes button */}
+            <div style={{ textAlign: "center", marginTop: 8 }}>
+              <a
+                href={`https://open.spotify.com/show/${spotifyShowId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  border: "2px solid var(--navy)", color: "var(--navy)",
+                  background: "transparent",
+                  padding: "11px 28px", borderRadius: 8,
+                  fontWeight: 700, fontSize: 13,
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "var(--navy)";
+                  (e.currentTarget as HTMLElement).style.color = "#fff";
+                }}
+                onMouseOut={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "transparent";
+                  (e.currentTarget as HTMLElement).style.color = "var(--navy)";
+                }}
+              >
+                All Episodes on Spotify →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
