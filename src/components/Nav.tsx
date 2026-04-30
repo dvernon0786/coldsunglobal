@@ -46,7 +46,7 @@ const nav = [
     ]},
   ]},
   { label:"Clients", children:[{group:"",items:[{label:"Our Clients",href:"/clients"},{label:"Success Stories",href:"/clients#stories"}]}]},
-  { label:"Resources", children:[{group:"",items:[{label:"Blog & Insights",href:"/resources"},{label:"Ebooks & Guides",href:"/resources#ebooks"},{label:"Webinars",href:"/resources#webinars"}]}]},
+  { label:"Resources", children:[{group:"",items:[{label:"Blog & Insights",href:"/resources"},{label:"Ebooks & Guides",href:"/resources#ebooks"},{label:"Webinars",href:"/resources#webinars"},{label:"Podcast",href:"/podcast"}]}]},
   { label:"About", children:[{group:"",items:[{label:"Who We Are",href:"/about"},{label:"Leadership",href:"/leadership"},{label:"Careers",href:"/about#careers"},{label:"Our Group",href:"/about#group"}]}]},
 ];
 
