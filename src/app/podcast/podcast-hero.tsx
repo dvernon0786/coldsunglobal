@@ -37,7 +37,7 @@ export default function PodcastHero({ spotifyShowId }: { spotifyShowId: string }
           </p>
 
           <h1 style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "Arial, Helvetica, sans-serif",
             fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
             fontWeight: 800, lineHeight: 1.1,
             color: "#fff", margin: "0 0 24px",
@@ -129,7 +129,7 @@ export default function PodcastHero({ spotifyShowId }: { spotifyShowId: string }
             Stream the Show
           </p>
           <h2 style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "Arial, Helvetica, sans-serif",
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             color: "var(--navy)", fontWeight: 700, margin: "0 0 10px",
           }}>
@@ -189,12 +189,12 @@ export default function PodcastHero({ spotifyShowId }: { spotifyShowId: string }
               margin: "0 auto 20px",
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 40, fontWeight: 800, color: "var(--orange)",
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
             }}>
               E
             </div>
             <h3 style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
               fontSize: "1.3rem", fontWeight: 700,
               color: "var(--navy)", margin: "0 0 6px",
             }}>
@@ -217,7 +217,7 @@ export default function PodcastHero({ spotifyShowId }: { spotifyShowId: string }
               About the Show
             </p>
             <h2 style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
               fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
               color: "var(--navy)", fontWeight: 700, margin: "0 0 10px",
             }}>

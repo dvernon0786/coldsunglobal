@@ -9,10 +9,10 @@ export default function FieldService() {
       <section className="hero-grid py-28 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{color:"var(--orange)"}}>Field Service Management</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"'Playfair Display',serif",fontWeight:800}}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"Arial, Helvetica, sans-serif",fontWeight:800}}>
             AI-Ready Field Service<br/><span style={{color:"var(--orange)"}}>Starts Here.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             15+ years architecting field service for utilities, telecom, and healthcare. From ClickSoftware migrations to fully AI-enabled dispatch — Cold Sun Global connects every part of your field operation.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -22,7 +22,7 @@ export default function FieldService() {
             {["15 Yrs FSM Experience","150+ Implementations","SOC 2 Type II Certified","5 Platform Mastery"].map(b => (
               <div key={b} className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full" style={{background:"var(--orange)"}} />
-                <span className="text-white/70 text-sm" style={{fontFamily:"'DM Sans',sans-serif"}}>{b}</span>
+                <span className="text-white/70 text-sm" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{b}</span>
               </div>
             ))}
           </div>
@@ -34,10 +34,10 @@ export default function FieldService() {
           <div>
             <p className="section-label mb-3">The Challenge</p>
             <h2 className="text-3xl md:text-4xl mb-6 accent-line" style={{color:"var(--navy)"}}>The Next Era of Field Service: Connected + Intelligent</h2>
-            <p className="text-gray-600 leading-relaxed mb-5" style={{fontFamily:"'DM Sans',sans-serif"}}>
+            <p className="text-gray-600 leading-relaxed mb-5" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
               The demands on today&apos;s field workforce are higher than ever. Customers expect instant updates and seamless coordination. Operations teams are challenged to reduce costs while doing more with fewer resources.
             </p>
-            <p className="text-gray-600 leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>
+            <p className="text-gray-600 leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
               Success now depends on intelligent automation, connected data, and AI-driven decision-making. Cold Sun Global helps you achieve all three — through 15+ years of hands-on field service transformation experience across some of the most demanding operating environments in energy, telecom, and healthcare.
             </p>
           </div>
@@ -51,8 +51,8 @@ export default function FieldService() {
               {t:"ClickSoftware Migration",d:"The most complex migration in FSM. We&apos;ve done it many times. We know where the risk is."},
             ].map(item => (
               <div key={item.t} className="p-5 rounded-xl border border-gray-100 bg-white card-lift">
-                <h3 className="font-bold text-sm mb-1.5" style={{color:"var(--navy)",fontFamily:"'Playfair Display',serif"}}>{item.t}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>{item.d}</p>
+                <h3 className="font-bold text-sm mb-1.5" style={{color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{item.t}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{item.d}</p>
               </div>
             ))}
           </div>
@@ -74,8 +74,8 @@ export default function FieldService() {
             ].map(ind => (
               <div key={ind.n} className="p-6 rounded-xl bg-white border border-gray-100 card-lift">
                 <div className="text-3xl mb-3">{ind.i}</div>
-                <h3 className="font-bold mb-2" style={{color:"var(--navy)",fontFamily:"'Playfair Display',serif"}}>{ind.n}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>{ind.d}</p>
+                <h3 className="font-bold mb-2" style={{color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{ind.n}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{ind.d}</p>
               </div>
             ))}
           </div>
@@ -84,8 +84,8 @@ export default function FieldService() {
 
       <section className="py-20 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>Get Your Field Service Readiness Assessment</h2>
-          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>A complimentary 45-minute session with Erik. Walk away with a migration roadmap, ROI projection, and 12–16 week implementation timeline — no obligation.</p>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Get Your Field Service Readiness Assessment</h2>
+          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>A complimentary 45-minute session with Erik. Walk away with a migration roadmap, ROI projection, and 12–16 week implementation timeline — no obligation.</p>
           <Link href="/contact" className="btn-primary">Book Your Assessment →</Link>
         </div>
       </section>

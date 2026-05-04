@@ -45,10 +45,10 @@ export default function SolutionsIndex() {
       <section className="hero-grid py-28 px-6" style={{ background: "var(--navy)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{ color: "var(--orange)" }}>Solutions</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "'Playfair Display',serif", fontWeight: 800 }}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 800 }}>
             Platform-Agnostic.<br /><span style={{ color: "var(--orange)" }}>Outcome-Obsessed.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Cold Sun Global holds certified expertise across five enterprise platforms — Salesforce, NetSuite, IFS Cloud, ServiceNow, and Sage Intacct. We recommend the right tool for your business, not the one that benefits us most.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -58,7 +58,7 @@ export default function SolutionsIndex() {
           {/* Platform badges */}
           <div className="mt-14 flex flex-wrap gap-3 pt-10 border-t border-white/10">
             {["Salesforce","NetSuite","IFS Cloud","ServiceNow","Sage Intacct"].map(p => (
-              <span key={p} className="px-4 py-2 rounded-full text-sm font-semibold border border-white/20 text-white/80" style={{ fontFamily: "'DM Sans',sans-serif" }}>{p}</span>
+              <span key={p} className="px-4 py-2 rounded-full text-sm font-semibold border border-white/20 text-white/80" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{p}</span>
             ))}
           </div>
         </div>
@@ -74,8 +74,8 @@ export default function SolutionsIndex() {
           ].map(item => (
             <div key={item.title} className="p-8 rounded-xl bg-white border border-gray-100 card-lift">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="font-bold text-lg mb-3" style={{ color: "var(--navy)", fontFamily: "'Playfair Display',serif" }}>{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: "'DM Sans',sans-serif" }}>{item.body}</p>
+              <h3 className="font-bold text-lg mb-3" style={{ color: "var(--navy)", fontFamily: "Arial, Helvetica, sans-serif" }}>{item.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{item.body}</p>
             </div>
           ))}
         </div>
@@ -86,18 +86,18 @@ export default function SolutionsIndex() {
         <section key={group.group} className="py-24 px-6" style={{ background: idx % 2 === 0 ? "var(--white)" : "var(--off-white)" }}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-10">
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ background: group.color, color: "white", fontFamily: "'DM Sans',sans-serif" }}>{group.group}</div>
-              <p className="text-gray-600 max-w-2xl text-lg" style={{ fontFamily: "'DM Sans',sans-serif" }}>{group.intro}</p>
+              <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ background: group.color, color: "white", fontFamily: "Arial, Helvetica, sans-serif" }}>{group.group}</div>
+              <p className="text-gray-600 max-w-2xl text-lg" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{group.intro}</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {group.items.map(item => (
                 <Link key={item.href + item.label} href={item.href}
                   className="card-lift block p-8 rounded-xl border border-gray-100 bg-white hover:border-orange-200 group">
-                  <h3 className="font-bold text-lg mb-3 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "'Playfair Display',serif" }}>
+                  <h3 className="font-bold text-lg mb-3 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                     {item.label}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "'DM Sans',sans-serif" }}>{item.desc}</p>
-                  <span className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--orange)", fontFamily: "'DM Sans',sans-serif" }}>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{item.desc}</p>
+                  <span className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--orange)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                     Explore <ArrowRight size={14} />
                   </span>
                 </Link>
@@ -110,10 +110,10 @@ export default function SolutionsIndex() {
       {/* CTA */}
       <section className="py-20 px-6" style={{ background: "var(--navy)" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: "'Playfair Display',serif" }}>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Not Sure Which Platform Is Right?
           </h2>
-          <p className="text-white/70 text-lg mb-8" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+          <p className="text-white/70 text-lg mb-8" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Erik will give you a platform-agnostic fit analysis — Salesforce vs NetSuite vs IFS vs ServiceNow — based on your business model and goals.
           </p>
           <Link href="/contact" className="btn-primary">Get a Free Platform Assessment →</Link>

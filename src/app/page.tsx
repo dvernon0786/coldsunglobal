@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Globe, TrendingUp, Shield, Zap, Users, Award } from "lucide-react";
 
@@ -55,47 +56,77 @@ const whyUs = [
   { icon: <Award size={22} />, title: "Backed by Cold Sun Group", body: "Cold Sun Global sits above Cold Sun Capital (investments) and Cold Sun Enterprise (execution) — a vertically integrated group." },
 ];
 
-const S = {
-  navy: "#04365f",
-  navyDeep: "#02243f",
-  orange: "#f68900",
-  offWhite: "#f8f9fb",
-  white: "#ffffff",
-  grey: "#4a5568",
-  greyLight: "#e8ecf0",
-  font: "'DM Sans', sans-serif",
-  display: "'Playfair Display', serif",
-};
-
 export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: S.navy, position: "relative", overflow: "hidden", padding: "7rem 1.5rem 5rem" }}>
-        <div style={{ position: "absolute", top: 0, right: 0, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(246,137,0,0.15) 0%, transparent 70%)", transform: "translate(30%,-30%)", pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 16 }}>Cold Sun Global</p>
-          <h1 style={{ fontFamily: S.display, fontWeight: 800, fontSize: "clamp(2.5rem,6vw,4.5rem)", color: S.white, lineHeight: 1.1, marginBottom: 24 }}>
-            Outcomes,<br /><span style={{ color: S.orange }}>Engineered</span> Globally.
+      <section className="relative bg-white overflow-hidden" style={{ padding: "7rem 1.5rem 5rem" }}>
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, #e5e7eb 2px, #e5e7eb 4px)",
+            backgroundSize: "20px 20px",
+          }}
+        />
+        {/* Ambient glow */}
+        <div
+          className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(246,137,0,0.08) 0%, transparent 70%)",
+            transform: "translate(30%,-30%)",
+          }}
+        />
+        <div className="max-w-[1200px] mx-auto relative z-10">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#f68900" }}>
+            Cold Sun Global
+          </p>
+          <h1
+            className="font-bold leading-tight mb-6"
+            style={{ fontSize: "clamp(2.5rem,6vw,4.5rem)", color: "#04365f" }}
+          >
+            Outcomes,{" "}
+            <span style={{ color: "#f68900" }}>Engineered</span> Globally.
           </h1>
-          <p style={{ fontFamily: S.font, fontSize: "1.125rem", color: "rgba(255,255,255,0.7)", maxWidth: 640, marginBottom: 40, lineHeight: 1.7 }}>
+          <p
+            className="text-lg leading-relaxed mb-10 max-w-xl"
+            style={{ color: "#64748b" }}
+          >
             Cold Sun Global is an international enterprise transformation group — delivering Salesforce, NetSuite, IFS Cloud, and ServiceNow solutions across North America, the UK, EU, and India.
           </p>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <Link href="/contact" style={{ background: S.orange, color: S.white, padding: "14px 28px", borderRadius: 8, fontFamily: S.font, fontWeight: 600, fontSize: 15, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>
+          <div className="flex gap-4 flex-wrap mb-16">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-white text-[15px] transition-colors focus:outline-none focus:ring-2 focus:ring-[#f68900] focus:ring-offset-2"
+              style={{ backgroundColor: "#f68900" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#d57700")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f68900")}
+            >
               Talk to an Expert <ArrowRight size={16} />
             </Link>
-            <Link href="/about" style={{ border: "2px solid rgba(255,255,255,0.5)", color: S.white, padding: "12px 26px", borderRadius: 8, fontFamily: S.font, fontWeight: 600, fontSize: 15, textDecoration: "none" }}>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-[15px] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0061af] focus:ring-offset-2 hover:bg-[#0061af] hover:text-white"
+              style={{ border: "2px solid #0061af", color: "#0061af" }}
+            >
               Who We Are
             </Link>
           </div>
 
           {/* Stats */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+          <div
+            className="grid gap-8 pt-10"
+            style={{
+              gridTemplateColumns: "repeat(4,1fr)",
+              borderTop: "1px solid #e8ecf0",
+            }}
+          >
             {stats.map(s => (
               <div key={s.label}>
-                <div style={{ fontFamily: S.display, fontSize: "2.5rem", fontWeight: 800, color: S.orange, lineHeight: 1 }}>{s.number}</div>
-                <div style={{ fontFamily: S.font, color: "rgba(255,255,255,0.6)", fontSize: 14, marginTop: 6 }}>{s.label}</div>
+                <div className="font-bold leading-none mb-2" style={{ fontSize: "2.5rem", color: "#f68900" }}>
+                  {s.number}
+                </div>
+                <div className="text-sm" style={{ color: "#64748b" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -103,31 +134,56 @@ export default function Home() {
       </section>
 
       {/* CLIENT LOGO STRIP */}
-      <section style={{ background: S.offWhite, padding: "2.5rem 0", borderBottom: `1px solid ${S.greyLight}`, overflow: "hidden" }}>
-        <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "#999", textAlign: "center", marginBottom: 20 }}>Trusted by Industry Leaders</p>
-        <div style={{ overflow: "hidden", position: "relative" }}>
-          <div className="animate-scroll-logos" style={{ display: "flex", gap: 24, width: "max-content" }}>
+      <section className="py-10 overflow-hidden" style={{ background: "#f8f9fb", borderBottom: "1px solid #e8ecf0" }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-center mb-5" style={{ color: "#999" }}>
+          Trusted by Industry Leaders
+        </p>
+        <div className="overflow-hidden relative">
+          <div className="animate-scroll-logos flex gap-6" style={{ width: "max-content" }}>
             {[...clients, ...clients].map((c, i) => (
-              <div key={i} style={{ flexShrink: 0, padding: "8px 20px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: "#555", background: S.white, border: `1px solid ${S.greyLight}`, whiteSpace: "nowrap", fontFamily: S.font }}>{c}</div>
+              <div
+                key={i}
+                className="flex-shrink-0 px-5 py-2 rounded-lg text-[13px] font-semibold whitespace-nowrap"
+                style={{
+                  color: "#555",
+                  background: "#ffffff",
+                  border: "1px solid #e8ecf0",
+                }}
+              >
+                {c}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* SOLUTIONS GRID */}
-      <section style={{ padding: "6rem 1.5rem", background: S.white }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 12 }}>What We Deliver</p>
-          <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.8rem,3vw,2.5rem)", color: S.navy, marginBottom: 8 }}>Platform Solutions Built for Scale</h2>
-          <div style={{ width: 56, height: 4, background: S.orange, borderRadius: 2, marginBottom: 16 }} />
-          <p style={{ fontFamily: S.font, color: S.grey, fontSize: "1.1rem", maxWidth: 580, marginBottom: 56 }}>We are platform-agnostic by design. The best tool for your business wins — certified across all of them.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-3" style={{ color: "#f68900" }}>
+            What We Deliver
+          </p>
+          <h2 className="font-bold mb-2" style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)", color: "#04365f" }}>
+            Platform Solutions Built for Scale
+          </h2>
+          <div className="w-14 h-1 rounded-full mb-4" style={{ background: "#f68900" }} />
+          <p className="text-lg leading-relaxed max-w-lg mb-14" style={{ color: "#64748b" }}>
+            We are platform-agnostic by design. The best tool for your business wins — certified across all of them.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {solutions.map(sol => (
-              <Link key={sol.href} href={sol.href} style={{ textDecoration: "none", display: "block", padding: 32, borderRadius: 16, border: `1px solid ${S.greyLight}`, background: S.white, transition: "box-shadow 0.2s" }}>
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{sol.icon}</div>
-                <h3 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "1.1rem", color: S.navy, marginBottom: 12 }}>{sol.title}</h3>
-                <p style={{ fontFamily: S.font, color: S.grey, fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>{sol.desc}</p>
-                <span style={{ fontFamily: S.font, fontWeight: 600, fontSize: 14, color: S.orange, display: "flex", alignItems: "center", gap: 4 }}>Learn more <ArrowRight size={14} /></span>
+              <Link
+                key={sol.href}
+                href={sol.href}
+                className="block p-8 rounded-2xl border transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0061af] focus:ring-offset-2"
+                style={{ border: "1px solid #e8ecf0", background: "#ffffff", textDecoration: "none" }}
+              >
+                <div className="text-3xl mb-4">{sol.icon}</div>
+                <h3 className="font-bold text-lg mb-3" style={{ color: "#04365f" }}>{sol.title}</h3>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b" }}>{sol.desc}</p>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold" style={{ color: "#f68900" }}>
+                  Learn more <ArrowRight size={14} />
+                </span>
               </Link>
             ))}
           </div>
@@ -135,28 +191,50 @@ export default function Home() {
       </section>
 
       {/* WHY COLD SUN */}
-      <section style={{ padding: "6rem 1.5rem", background: S.offWhite }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <section className="py-24 px-6" style={{ background: "#f8f9fb" }}>
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
-            <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 12 }}>Why Cold Sun Global</p>
-            <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.8rem,3vw,2.5rem)", color: S.navy, marginBottom: 24, lineHeight: 1.2 }}>Built for Outcomes.<br />Trusted for Delivery.</h2>
-            <p style={{ fontFamily: S.font, color: S.grey, fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 32 }}>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-3" style={{ color: "#f68900" }}>
+              Why Cold Sun Global
+            </p>
+            <h2 className="font-bold mb-6 leading-tight" style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)", color: "#04365f" }}>
+              Built for Outcomes.<br />Trusted for Delivery.
+            </h2>
+            <p className="text-base leading-relaxed mb-8" style={{ color: "#64748b" }}>
               For over 15 years, the Cold Sun Group has delivered complex transformations for organizations that take service seriously. Cold Sun Global brings that track record to international markets.
             </p>
-            {["Salesforce Summit-level expertise","SOC 2 Type II certified operations","5 enterprise platforms, one team","India delivery hub for cost efficiency","Presence in NA, UK, Netherlands, India"].map(item => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                <CheckCircle size={17} style={{ color: S.orange, flexShrink: 0 }} />
-                <span style={{ fontFamily: S.font, color: "#374151", fontSize: 14 }}>{item}</span>
+            {[
+              "Salesforce Summit-level expertise",
+              "SOC 2 Type II certified operations",
+              "5 enterprise platforms, one team",
+              "India delivery hub for cost efficiency",
+              "Presence in NA, UK, Netherlands, India",
+            ].map(item => (
+              <div key={item} className="flex items-center gap-3 mb-3">
+                <CheckCircle size={17} style={{ color: "#f68900", flexShrink: 0 }} />
+                <span className="text-sm" style={{ color: "#374151" }}>{item}</span>
               </div>
             ))}
-            <Link href="/about" style={{ display: "inline-block", marginTop: 32, background: S.orange, color: S.white, padding: "14px 28px", borderRadius: 8, fontFamily: S.font, fontWeight: 600, fontSize: 15, textDecoration: "none" }}>Meet the Team →</Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-lg font-semibold text-[15px] text-white transition-colors"
+              style={{ backgroundColor: "#f68900" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#d57700")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f68900")}
+            >
+              Meet the Team →
+            </Link>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="grid grid-cols-2 gap-4">
             {whyUs.map(w => (
-              <div key={w.title} style={{ padding: 24, borderRadius: 16, background: S.white, border: `1px solid ${S.greyLight}` }}>
-                <div style={{ color: S.orange, marginBottom: 12 }}>{w.icon}</div>
-                <h4 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "0.95rem", color: S.navy, marginBottom: 8 }}>{w.title}</h4>
-                <p style={{ fontFamily: S.font, fontSize: 12, color: S.grey, lineHeight: 1.6 }}>{w.body}</p>
+              <div
+                key={w.title}
+                className="p-6 rounded-2xl border transition-all hover:shadow-md"
+                style={{ background: "#ffffff", border: "1px solid #e8ecf0" }}
+              >
+                <div className="mb-3" style={{ color: "#f68900" }}>{w.icon}</div>
+                <h4 className="font-bold text-sm mb-2" style={{ color: "#04365f" }}>{w.title}</h4>
+                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>{w.body}</p>
               </div>
             ))}
           </div>
@@ -164,13 +242,22 @@ export default function Home() {
       </section>
 
       {/* SERVICES BAR */}
-      <section style={{ padding: "5rem 1.5rem", background: S.navy }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 12 }}>How We Engage</p>
-          <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.8rem,3vw,2.5rem)", color: S.white, marginBottom: 40 }}>End-to-End Service Coverage</h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+      <section className="py-20 px-6" style={{ background: "#04365f" }}>
+        <div className="max-w-[1200px] mx-auto">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-3" style={{ color: "#f68900" }}>
+            How We Engage
+          </p>
+          <h2 className="font-bold mb-10 text-white" style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)" }}>
+            End-to-End Service Coverage
+          </h2>
+          <div className="flex flex-wrap gap-3">
             {services.map(s => (
-              <Link key={s.href} href={s.href} style={{ padding: "10px 22px", borderRadius: 50, fontSize: 14, fontWeight: 600, border: "1px solid rgba(255,255,255,0.25)", color: S.white, textDecoration: "none", fontFamily: S.font }}>
+              <Link
+                key={s.href}
+                href={s.href}
+                className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#04365f]"
+                style={{ border: "1px solid rgba(255,255,255,0.25)", textDecoration: "none" }}
+              >
                 {s.title}
               </Link>
             ))}
@@ -179,16 +266,25 @@ export default function Home() {
       </section>
 
       {/* INDUSTRIES */}
-      <section style={{ padding: "6rem 1.5rem", background: S.white }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 12 }}>Industries We Serve</p>
-          <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.8rem,3vw,2.5rem)", color: S.navy, marginBottom: 8 }}>Deep Vertical Knowledge Across 10 Industries</h2>
-          <div style={{ width: 56, height: 4, background: S.orange, borderRadius: 2, marginBottom: 48 }} />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 16 }}>
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-3" style={{ color: "#f68900" }}>
+            Industries We Serve
+          </p>
+          <h2 className="font-bold mb-2" style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)", color: "#04365f" }}>
+            Deep Vertical Knowledge Across 10 Industries
+          </h2>
+          <div className="w-14 h-1 rounded-full mb-12" style={{ background: "#f68900" }} />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {industries.map(ind => (
-              <Link key={ind.href} href={ind.href} style={{ textDecoration: "none", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: 20, borderRadius: 16, border: `1px solid ${S.greyLight}`, background: S.white }}>
-                <span style={{ fontFamily: S.font, fontWeight: 600, fontSize: 13, color: "#374151" }}>{ind.name}</span>
-                <ArrowRight size={14} style={{ marginTop: 8, color: "#d1d5db" }} />
+              <Link
+                key={ind.href}
+                href={ind.href}
+                className="flex flex-col items-center text-center p-5 rounded-2xl border transition-all hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0061af] focus:ring-offset-2"
+                style={{ border: "1px solid #e8ecf0", background: "#ffffff", textDecoration: "none" }}
+              >
+                <span className="text-sm font-semibold mb-2" style={{ color: "#374151" }}>{ind.name}</span>
+                <ArrowRight size={14} style={{ color: "#cadeef" }} />
               </Link>
             ))}
           </div>
@@ -196,23 +292,33 @@ export default function Home() {
       </section>
 
       {/* GROUP STRUCTURE */}
-      <section style={{ padding: "6rem 1.5rem", background: S.navyDeep }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 12 }}>The Cold Sun Group</p>
-          <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.8rem,3vw,2.5rem)", color: S.white, marginBottom: 16 }}>One Brand. Three Entities. One Goal.</h2>
-          <p style={{ fontFamily: S.font, color: "rgba(255,255,255,0.6)", fontSize: "1.1rem", maxWidth: 560, margin: "0 auto 56px" }}>
+      <section className="py-24 px-6" style={{ background: "#02243f" }}>
+        <div className="max-w-[1200px] mx-auto text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-3" style={{ color: "#f68900" }}>
+            The Cold Sun Group
+          </p>
+          <h2 className="font-bold text-white mb-4" style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)" }}>
+            One Brand. Three Entities. One Goal.
+          </h2>
+          <p className="text-lg leading-relaxed max-w-lg mx-auto mb-14" style={{ color: "rgba(255,255,255,0.55)" }}>
             The Cold Sun Group operates through a disciplined three-layer structure — designed for global scale, clean ownership, and focused delivery.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24, maxWidth: 960, margin: "0 auto" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { name: "Cold Sun Global", role: "International Brand & Presence", desc: "The name the market sees. Global positioning, partnerships, and reputation.", color: S.orange },
+              { name: "Cold Sun Global", role: "International Brand & Presence", desc: "The name the market sees. Global positioning, partnerships, and reputation.", color: "#f68900" },
               { name: "Cold Sun Capital", role: "Ownership & Investment", desc: "Controls equity structure, investments, and financial strategy across the group.", color: "#60a5fa" },
               { name: "Cold Sun Enterprise", role: "Delivery Engine", desc: "Where the work happens. Implementation, consulting, and delivery.", color: "#34d399" },
             ].map(e => (
-              <div key={e.name} style={{ padding: 32, borderRadius: 16, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", textAlign: "left" }}>
-                <div style={{ fontFamily: S.font, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: e.color, marginBottom: 8 }}>{e.role}</div>
-                <h3 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "1.25rem", color: S.white, marginBottom: 12 }}>{e.name}</h3>
-                <p style={{ fontFamily: S.font, fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.6 }}>{e.desc}</p>
+              <div
+                key={e.name}
+                className="p-8 rounded-2xl text-left"
+                style={{ border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)" }}
+              >
+                <div className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: e.color }}>
+                  {e.role}
+                </div>
+                <h3 className="font-bold text-white text-xl mb-3">{e.name}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{e.desc}</p>
               </div>
             ))}
           </div>
@@ -220,21 +326,38 @@ export default function Home() {
       </section>
 
       {/* ERIK CTA */}
-      <section style={{ padding: "6rem 1.5rem", background: S.offWhite }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", gap: 64 }}>
-          <div style={{ flexShrink: 0, width: 112, height: 112, borderRadius: "50%", background: S.navy, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: S.display, fontSize: "2.5rem", fontWeight: 800, color: S.white }}>E</div>
-          <div style={{ flex: 1 }}>
-            <p style={{ fontFamily: S.font, fontWeight: 600, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: S.orange, marginBottom: 8 }}>Strategy Sessions with Erik</p>
-            <h2 style={{ fontFamily: S.display, fontWeight: 700, fontSize: "clamp(1.6rem,3vw,2.2rem)", color: S.navy, marginBottom: 16 }}>45 Minutes. No Slides. Real Insight.</h2>
-            <p style={{ fontFamily: S.font, color: S.grey, fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 24 }}>
+      <section className="py-24 px-6" style={{ background: "#f8f9fb" }}>
+        <div className="max-w-[900px] mx-auto flex items-center gap-16 flex-wrap md:flex-nowrap">
+          <div
+            className="flex-shrink-0 w-28 h-28 rounded-full flex items-center justify-center font-bold text-white text-4xl"
+            style={{ background: "#04365f" }}
+          >
+            E
+          </div>
+          <div className="flex-1">
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "#f68900" }}>
+              Strategy Sessions with Erik
+            </p>
+            <h2 className="font-bold mb-4 leading-tight" style={{ fontSize: "clamp(1.6rem,3vw,2.2rem)", color: "#04365f" }}>
+              45 Minutes. No Slides. Real Insight.
+            </h2>
+            <p className="text-base leading-relaxed mb-6" style={{ color: "#64748b" }}>
               Erik personally leads every initial strategy call. You&apos;ll walk away with a migration roadmap, ROI projection, and a clear picture of your next 12 weeks — whether you work with us or not.
             </p>
-            <div style={{ display: "flex", gap: 24, marginBottom: 28, flexWrap: "wrap" }}>
+            <div className="flex gap-6 flex-wrap mb-7">
               {["✓ 15 Years FSM & ERP Experience","✓ 150+ Implementations","✓ No Sales Pressure"].map(i => (
-                <span key={i} style={{ fontFamily: S.font, fontSize: 14, color: "#374151", fontWeight: 500 }}>{i}</span>
+                <span key={i} className="text-sm font-medium" style={{ color: "#374151" }}>{i}</span>
               ))}
             </div>
-            <Link href="/contact" style={{ display: "inline-block", background: S.orange, color: S.white, padding: "14px 28px", borderRadius: 8, fontFamily: S.font, fontWeight: 600, fontSize: 15, textDecoration: "none" }}>Schedule a Session with Erik →</Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-semibold text-[15px] text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#f68900] focus:ring-offset-2"
+              style={{ backgroundColor: "#f68900" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#d57700")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f68900")}
+            >
+              Schedule a Session with Erik →
+            </Link>
           </div>
         </div>
       </section>

@@ -63,10 +63,10 @@ export default function ServicesIndex() {
       <section className="hero-grid py-28 px-6" style={{ background: "var(--navy)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{ color: "var(--orange)" }}>Services</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "'Playfair Display',serif", fontWeight: 800 }}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 800 }}>
             End-to-End Coverage.<br /><span style={{ color: "var(--orange)" }}>From Strategy to Support.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Cold Sun Global provides the full spectrum of enterprise transformation services — so you have one trusted partner from initial consulting through go-live, adoption, and ongoing optimization.
           </p>
           <Link href="/contact" className="btn-primary">Talk to an Expert →</Link>
@@ -87,9 +87,9 @@ export default function ServicesIndex() {
             ].map((step, i) => (
               <div key={step.n} className="flex-1 relative">
                 <div className="p-6 rounded-xl bg-white border border-gray-100 mx-1">
-                  <div className="text-3xl font-bold mb-2" style={{ color: "var(--orange)", fontFamily: "'Playfair Display',serif", opacity: 0.5 }}>{step.n}</div>
-                  <h3 className="font-bold text-sm mb-1" style={{ color: "var(--navy)", fontFamily: "'Playfair Display',serif" }}>{step.t}</h3>
-                  <p className="text-xs text-gray-500" style={{ fontFamily: "'DM Sans',sans-serif" }}>{step.d}</p>
+                  <div className="text-3xl font-bold mb-2" style={{ color: "var(--orange)", fontFamily: "Arial, Helvetica, sans-serif", opacity: 0.5 }}>{step.n}</div>
+                  <h3 className="font-bold text-sm mb-1" style={{ color: "var(--navy)", fontFamily: "Arial, Helvetica, sans-serif" }}>{step.t}</h3>
+                  <p className="text-xs text-gray-500" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{step.d}</p>
                 </div>
                 {i < 4 && (
                   <div className="hidden md:flex absolute top-1/2 -right-2 -translate-y-1/2 z-10 w-4 h-4 rounded-full items-center justify-center" style={{ background: "var(--orange)" }}>
@@ -116,16 +116,16 @@ export default function ServicesIndex() {
                 <div className="flex items-start gap-4">
                   <div className="text-3xl flex-shrink-0">{svc.icon}</div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "'Playfair Display',serif" }}>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                       {svc.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
                       {svc.desc}
                     </p>
-                    <div className="p-3 rounded-lg text-xs" style={{ background: "var(--off-white)", fontFamily: "'DM Sans',sans-serif", color: "var(--grey-text)" }}>
+                    <div className="p-3 rounded-lg text-xs" style={{ background: "var(--off-white)", fontFamily: "Arial, Helvetica, sans-serif", color: "var(--grey-text)" }}>
                       <strong style={{ color: "var(--orange)" }}>When to use: </strong>{svc.when}
                     </div>
-                    <span className="flex items-center gap-1 text-sm font-semibold mt-4" style={{ color: "var(--orange)", fontFamily: "'DM Sans',sans-serif" }}>
+                    <span className="flex items-center gap-1 text-sm font-semibold mt-4" style={{ color: "var(--orange)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                       Learn more <ArrowRight size={14} />
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export default function ServicesIndex() {
       <section className="py-20 px-6" style={{ background: "var(--navy-deep)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{ color: "var(--orange)" }}>Engagement Models</p>
-          <h2 className="text-3xl md:text-4xl text-white mb-10" style={{ fontFamily: "'Playfair Display',serif" }}>
+          <h2 className="text-3xl md:text-4xl text-white mb-10" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             We Work the Way You Need
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -150,9 +150,9 @@ export default function ServicesIndex() {
               { title: "Staff Augmentation", desc: "Certified Cold Sun Global consultants embedded in your team. Best when you need specific expertise for a defined period without full project ownership.", badge: "Flexible" },
             ].map(m => (
               <div key={m.title} className="p-8 rounded-xl border border-white/10 bg-white/5">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full mb-4 inline-block" style={{ background: "var(--orange)", color: "white", fontFamily: "'DM Sans',sans-serif" }}>{m.badge}</span>
-                <h3 className="text-xl text-white font-bold mb-3" style={{ fontFamily: "'Playfair Display',serif" }}>{m.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed" style={{ fontFamily: "'DM Sans',sans-serif" }}>{m.desc}</p>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full mb-4 inline-block" style={{ background: "var(--orange)", color: "white", fontFamily: "Arial, Helvetica, sans-serif" }}>{m.badge}</span>
+                <h3 className="text-xl text-white font-bold mb-3" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{m.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{m.desc}</p>
               </div>
             ))}
           </div>

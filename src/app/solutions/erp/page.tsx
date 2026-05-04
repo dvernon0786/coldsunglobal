@@ -16,10 +16,10 @@ export default function ERP() {
       <section className="hero-grid py-28 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{color:"var(--orange)"}}>ERP & Platform Solutions</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"'Playfair Display',serif",fontWeight:800}}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"Arial, Helvetica, sans-serif",fontWeight:800}}>
             The Right ERP.<br/><span style={{color:"var(--orange)"}}>Not Just the Loudest One.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             Cold Sun Global is platform-agnostic. We implement NetSuite, IFS Cloud, and Sage Intacct — choosing the right tool for your specific business, not the one with the biggest marketing budget.
           </p>
           <Link href="/contact" className="btn-primary">Get an ERP Fit Assessment →</Link>
@@ -30,7 +30,7 @@ export default function ERP() {
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Why Platform-Agnostic Matters</p>
           <h2 className="text-3xl md:text-4xl mb-6 accent-line" style={{color:"var(--navy)"}}>Five Platforms. One Trusted Team.</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mb-10" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-gray-600 text-lg max-w-3xl mb-10" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             Most ERP partners are committed to one vendor — because their revenue depends on it. Cold Sun Global is different. We hold certifications across Salesforce, NetSuite, IFS Cloud, ServiceNow, and Sage Intacct. Our recommendation is based on what fits your business — full stop.
           </p>
         </div>
@@ -42,14 +42,14 @@ export default function ERP() {
             <div>
               <p className="section-label mb-2" style={{color:"var(--orange)"}}>{p.tag}</p>
               <h2 className="text-3xl md:text-4xl mb-6 accent-line" style={{color:"var(--navy)"}}>{p.name}</h2>
-              <p className="text-gray-600 leading-relaxed mb-8 text-lg" style={{fontFamily:"'DM Sans',sans-serif"}}>{p.desc}</p>
+              <p className="text-gray-600 leading-relaxed mb-8 text-lg" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{p.desc}</p>
               <Link href="/contact" className="btn-primary">Talk to a {p.name} Expert →</Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {p.features.map(f => (
                 <div key={f} className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-gray-100">
                   <CheckCircle size={15} style={{color:"var(--orange)"}} className="flex-shrink-0" />
-                  <span className="text-sm text-gray-700" style={{fontFamily:"'DM Sans',sans-serif"}}>{f}</span>
+                  <span className="text-sm text-gray-700" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{f}</span>
                 </div>
               ))}
             </div>
@@ -59,8 +59,8 @@ export default function ERP() {
 
       <section className="py-20 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>Not Sure Which ERP Is Right for You?</h2>
-          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>Erik will give you an honest platform fit analysis — Salesforce vs NetSuite vs IFS vs Sage — based on your business model, not our vendor relationships.</p>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Not Sure Which ERP Is Right for You?</h2>
+          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Erik will give you an honest platform fit analysis — Salesforce vs NetSuite vs IFS vs Sage — based on your business model, not our vendor relationships.</p>
           <Link href="/contact" className="btn-primary">Get a Platform Fit Analysis →</Link>
         </div>
       </section>

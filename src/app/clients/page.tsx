@@ -48,10 +48,10 @@ export default function Clients() {
       <section className="hero-grid py-28 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{color:"var(--orange)"}}>Our Clients</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6" style={{fontFamily:"'Playfair Display',serif",fontWeight:800}}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6" style={{fontFamily:"Arial, Helvetica, sans-serif",fontWeight:800}}>
             Organizations That Take<br/><span style={{color:"var(--orange)"}}>Service Seriously.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-white/70 text-xl max-w-2xl" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             Cold Sun Global has had the privilege of working with some of the most demanding organizations in energy, telecom, healthcare, and professional services — across four global regions.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function Clients() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {clients.map(c => (
               <div key={c} className="card-lift p-5 rounded-xl border border-gray-100 bg-white text-center">
-                <span className="text-sm font-semibold text-gray-700" style={{fontFamily:"'DM Sans',sans-serif"}}>{c}</span>
+                <span className="text-sm font-semibold text-gray-700" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{c}</span>
               </div>
             ))}
           </div>
@@ -81,18 +81,18 @@ export default function Clients() {
             {stories.map(s => (
               <div key={s.client} className="card-lift p-8 rounded-xl bg-white border border-gray-100">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{background:"var(--orange-pale)",color:"var(--orange)",fontFamily:"'DM Sans',sans-serif"}}>{s.industry}</span>
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{background:"var(--off-white)",color:"var(--navy)",fontFamily:"'DM Sans',sans-serif"}}>{s.platform}</span>
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{background:"var(--orange-pale)",color:"var(--orange)",fontFamily:"Arial, Helvetica, sans-serif"}}>{s.industry}</span>
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{background:"var(--off-white)",color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{s.platform}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{color:"var(--navy)",fontFamily:"'Playfair Display',serif"}}>{s.client}</h3>
+                <h3 className="text-xl font-bold mb-2" style={{color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{s.client}</h3>
                 <div className="grid md:grid-cols-2 gap-6 mt-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-2 text-gray-400" style={{fontFamily:"'DM Sans',sans-serif"}}>Challenge</p>
-                    <p className="text-gray-600 text-sm leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>{s.challenge}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-2 text-gray-400" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Challenge</p>
+                    <p className="text-gray-600 text-sm leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{s.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{color:"var(--orange)",fontFamily:"'DM Sans',sans-serif"}}>Outcome</p>
-                    <p className="text-gray-700 text-sm leading-relaxed font-medium" style={{fontFamily:"'DM Sans',sans-serif"}}>{s.outcome}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{color:"var(--orange)",fontFamily:"Arial, Helvetica, sans-serif"}}>Outcome</p>
+                    <p className="text-gray-700 text-sm leading-relaxed font-medium" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{s.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -103,8 +103,8 @@ export default function Clients() {
 
       <section className="py-20 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>Ready to Join This List?</h2>
-          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>Talk to Erik. We&apos;ll design a transformation approach as specific and demanding as your business.</p>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Ready to Join This List?</h2>
+          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Talk to Erik. We&apos;ll design a transformation approach as specific and demanding as your business.</p>
           <Link href="/contact" className="btn-primary">Start the Conversation →</Link>
         </div>
       </section>

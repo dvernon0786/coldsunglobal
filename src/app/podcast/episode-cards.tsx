@@ -45,7 +45,7 @@ export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Ep
           Episodes
         </p>
         <h2 style={{
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "Arial, Helvetica, sans-serif",
           fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
           color: "var(--navy)", fontWeight: 700, margin: "0 0 10px",
         }}>
@@ -92,7 +92,7 @@ export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Ep
                     Now Playing
                   </p>
                   <p style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "Arial, Helvetica, sans-serif",
                     fontSize: "0.95rem", fontWeight: 700, color: "var(--navy)",
                     lineHeight: 1.4, marginBottom: 8,
                   }}>
@@ -159,7 +159,7 @@ export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Ep
                   }}>
                     {/* Episode number */}
                     <span style={{
-                      fontFamily: "'Playfair Display', serif",
+                      fontFamily: "Arial, Helvetica, sans-serif",
                       fontSize: 22, fontWeight: 800,
                       color: "rgba(255,255,255,0.3)",
                       lineHeight: 1,
@@ -217,7 +217,7 @@ export default function EpisodeCards({ episodes, spotifyShowId }: { episodes: Ep
                       )}
                     </div>
                     <h3 style={{
-                      fontFamily: "'Playfair Display', serif",
+                      fontFamily: "Arial, Helvetica, sans-serif",
                       fontSize: "0.9rem", fontWeight: 700, lineHeight: 1.35,
                       color: isActive ? "var(--navy)" : "var(--navy)",
                       margin: "0 0 6px",

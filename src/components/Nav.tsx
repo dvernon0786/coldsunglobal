@@ -3,8 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 
-const S = { navy:"#04365f", orange:"#f68900", white:"#ffffff", font:"'DM Sans',sans-serif", display:"'Playfair Display',serif" };
-
 const nav = [
   { label:"Solutions", children:[
     { group:"Salesforce", items:[
@@ -56,31 +54,54 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState<string|null>(null);
 
   return (
-    <header style={{ position:"fixed", top:0, left:0, right:0, zIndex:50, background:S.white, borderBottom:"1px solid #e5e7eb", boxShadow:"0 1px 8px rgba(0,0,0,0.06)" }}>
-      <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 1.5rem", display:"flex", alignItems:"center", justifyContent:"space-between", height:64 }}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100" style={{ boxShadow: "0 1px 8px rgba(4,54,95,0.06)" }}>
+      <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+
         {/* Logo */}
-        <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:0, flexShrink:0 }}>
-          <img src="/coldsunglobal_logo.png" alt="Cold Sun Global" style={{ height:48, width:"auto" }} />
+        <Link href="/" className="flex items-center flex-shrink-0">
+          <img src="/coldsunglobal_logo.png" alt="Cold Sun Global" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
-        <nav style={{ display:"flex", alignItems:"center", gap:4 }}>
+        <nav className="flex items-center gap-1 nav-desktop-menu">
           {nav.map(item => (
-            <div key={item.label} style={{ position:"relative" }}
+            <div
+              key={item.label}
+              className="relative"
               onMouseEnter={() => setOpen(item.label)}
-              onMouseLeave={() => setOpen(null)}>
-              <button style={{ display:"flex", alignItems:"center", gap:4, padding:"8px 12px", background:"none", border:"none", cursor:"pointer", fontFamily:S.font, fontWeight:500, fontSize:14, color:"#374151" }}>
+              onMouseLeave={() => setOpen(null)}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#04365f] hover:bg-gray-50 transition-colors border-none bg-transparent cursor-pointer">
                 {item.label}
-                <ChevronDown size={13} style={{ transition:"transform 0.2s", transform: open===item.label ? "rotate(180deg)" : "none" }} />
+                <ChevronDown
+                  size={13}
+                  className="transition-transform duration-200"
+                  style={{ transform: open === item.label ? "rotate(180deg)" : "none" }}
+                />
               </button>
-              {open===item.label && (
-                <div style={{ position:"absolute", top:"100%", left:0, background:S.white, border:"1px solid #e5e7eb", borderRadius:12, boxShadow:"0 16px 40px rgba(0,0,0,0.12)", zIndex:100, padding:16, display:"flex", gap:24, minWidth: item.children.length>1 ? 440 : 200 }}>
+
+              {open === item.label && (
+                <div
+                  className="absolute top-full left-0 bg-white border border-gray-100 rounded-xl z-50 p-4 flex gap-6"
+                  style={{
+                    boxShadow: "0 16px 40px rgba(4,54,95,0.10)",
+                    minWidth: item.children.length > 1 ? 440 : 200,
+                  }}
+                >
                   {item.children.map(group => (
-                    <div key={group.group} style={{ flex:1 }}>
-                      {group.group && <p style={{ fontFamily:S.font, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:S.orange, marginBottom:8, paddingLeft:8 }}>{group.group}</p>}
+                    <div key={group.group} className="flex-1">
+                      {group.group && (
+                        <p className="text-[11px] font-semibold uppercase tracking-widest mb-2 pl-2" style={{ color: "#f68900" }}>
+                          {group.group}
+                        </p>
+                      )}
                       {group.items.map(i => (
-                        <Link key={i.href} href={i.href} onClick={()=>setOpen(null)}
-                          style={{ display:"block", padding:"7px 8px", fontSize:13, fontFamily:S.font, color:"#374151", textDecoration:"none", borderRadius:6, whiteSpace:"nowrap" }}>
+                        <Link
+                          key={i.href}
+                          href={i.href}
+                          onClick={() => setOpen(null)}
+                          className="block px-2 py-1.5 text-[13px] text-gray-600 hover:text-[#04365f] hover:bg-[#f0f6fc] rounded-md whitespace-nowrap transition-colors"
+                        >
                           {i.label}
                         </Link>
                       ))}
@@ -92,32 +113,52 @@ export default function Nav() {
           ))}
         </nav>
 
-        <Link href="/contact" style={{ background:S.orange, color:S.white, padding:"10px 22px", borderRadius:8, fontFamily:S.font, fontWeight:600, fontSize:14, textDecoration:"none" }}>
+        {/* CTA button */}
+        <Link
+          href="/contact"
+          className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#f68900] focus:ring-offset-2"
+          style={{ backgroundColor: "#f68900" }}
+          onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#d57700")}
+          onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f68900")}
+        >
           Contact Us
         </Link>
 
         {/* Mobile hamburger */}
-        <button onClick={()=>setMobile(!mobile)} style={{ display:"none", background:"none", border:"none", cursor:"pointer", padding:4 }}
-          className="mobile-hamburger">
-          {mobile ? <X size={22}/> : <Menu size={22}/>}
+        <button
+          onClick={() => setMobile(!mobile)}
+          className="mobile-hamburger hidden bg-transparent border-none cursor-pointer p-1 text-gray-600"
+          aria-label="Toggle mobile menu"
+        >
+          {mobile ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobile && (
-        <div style={{ background:S.white, borderTop:"1px solid #e5e7eb", maxHeight:"80vh", overflowY:"auto" }}>
+        <div className="bg-white border-t border-gray-100 max-h-[80vh] overflow-y-auto">
           {nav.map(item => (
             <div key={item.label}>
-              <button onClick={()=>setMobileOpen(mobileOpen===item.label?null:item.label)}
-                style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 24px", background:"none", border:"none", borderBottom:"1px solid #f3f4f6", cursor:"pointer", fontFamily:S.font, fontWeight:600, fontSize:14, color:"#374151" }}>
+              <button
+                onClick={() => setMobileOpen(mobileOpen === item.label ? null : item.label)}
+                className="w-full flex items-center justify-between px-6 py-4 bg-transparent border-none border-b border-gray-100 cursor-pointer text-sm font-semibold text-gray-700"
+              >
                 {item.label}
-                <ChevronDown size={16} style={{ transform: mobileOpen===item.label?"rotate(180deg)":"none", transition:"transform 0.2s" }} />
+                <ChevronDown
+                  size={16}
+                  className="transition-transform duration-200"
+                  style={{ transform: mobileOpen === item.label ? "rotate(180deg)" : "none" }}
+                />
               </button>
-              {mobileOpen===item.label && (
-                <div style={{ background:"#f9fafb", padding:"8px 24px 16px" }}>
-                  {item.children.flatMap(g=>g.items).map(i => (
-                    <Link key={i.href} href={i.href} onClick={()=>setMobile(false)}
-                      style={{ display:"block", padding:"8px 0", fontSize:14, fontFamily:S.font, color:"#374151", textDecoration:"none" }}>
+              {mobileOpen === item.label && (
+                <div className="bg-gray-50 px-6 pt-2 pb-4">
+                  {item.children.flatMap(g => g.items).map(i => (
+                    <Link
+                      key={i.href}
+                      href={i.href}
+                      onClick={() => setMobile(false)}
+                      className="block py-2 text-sm text-gray-600 hover:text-[#04365f] transition-colors"
+                    >
                       {i.label}
                     </Link>
                   ))}
@@ -125,9 +166,13 @@ export default function Nav() {
               )}
             </div>
           ))}
-          <div style={{ padding:16 }}>
-            <Link href="/contact" onClick={()=>setMobile(false)}
-              style={{ display:"block", textAlign:"center", background:S.orange, color:S.white, padding:"12px 24px", borderRadius:8, fontFamily:S.font, fontWeight:600, textDecoration:"none" }}>
+          <div className="p-4">
+            <Link
+              href="/contact"
+              onClick={() => setMobile(false)}
+              className="block text-center text-white font-semibold text-sm py-3 px-6 rounded-lg"
+              style={{ backgroundColor: "#f68900" }}
+            >
               Contact Us
             </Link>
           </div>
@@ -135,10 +180,10 @@ export default function Nav() {
       )}
 
       <style>{`
-        @media(max-width:900px){
-          nav { display:none!important; }
-          .mobile-hamburger { display:block!important; }
-          header > div > a[href="/contact"] ~ a { display:none; }
+        @media (max-width: 900px) {
+          .nav-desktop-menu { display: none !important; }
+          .mobile-hamburger { display: block !important; }
+          header > div > a[href="/contact"].sm\\:inline-flex { display: none !important; }
         }
       `}</style>
     </header>

@@ -13,7 +13,7 @@ export default function BeAGuestCTA() {
           Be a Guest
         </p>
         <h2 style={{
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "Arial, Helvetica, sans-serif",
           fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
           fontWeight: 800, color: "#fff",
           margin: "0 0 20px", lineHeight: 1.2,

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 export const metadata: Metadata = { title: "Salesforce Solutions" };
-const S = { navy:"#04365f", orange:"#f68900", offWhite:"#f8f9fb", white:"#ffffff", grey:"#4a5568", greyLight:"#e8ecf0", font:"'DM Sans',sans-serif", display:"'Playfair Display',serif" };
+const S = { navy:"#04365f", orange:"#f68900", offWhite:"#f8f9fb", white:"#ffffff", grey:"#4a5568", greyLight:"#e8ecf0", font:"Arial, Helvetica, sans-serif", display:"Arial, Helvetica, sans-serif" };
 const offerings = [
   {title:"Agentforce & AI Agents",desc:"Deploy autonomous AI agents that handle service requests, route field technicians, and manage revenue workflows — governed and enterprise-grade.",href:"/solutions/agentforce"},
   {title:"Agentforce Field Service",desc:"Connect dispatch, technicians, inventory, and customer communications in one AI-ready platform. Faster response times, less manual work.",href:"/solutions/field-service"},
@@ -18,7 +18,7 @@ export default function SalesforceSolutions() {
     <section style={{background:S.navy,padding:"7rem 1.5rem 5rem"}}>
       <div style={{maxWidth:1200,margin:"0 auto"}}>
         <p style={{fontFamily:S.font,fontWeight:600,fontSize:12,letterSpacing:"0.12em",textTransform:"uppercase",color:S.orange,marginBottom:16}}>Salesforce Solutions</p>
-        <h1 style={{fontFamily:S.display,fontWeight:800,fontSize:"clamp(2.2rem,5vw,4rem)",color:S.white,lineHeight:1.1,marginBottom:24}}>The World&apos;s #1 CRM.<br/><span style={{color:S.orange}}>Implemented Right.</span></h1>
+        <h1 style={{fontFamily:S.font,fontWeight:800,fontSize:"clamp(2.2rem,5vw,4rem)",color:S.white,lineHeight:1.1,marginBottom:24}}>The World&apos;s #1 CRM.<br/><span style={{color:S.orange}}>Implemented Right.</span></h1>
         <p style={{fontFamily:S.font,fontSize:"1.125rem",color:"rgba(255,255,255,0.7)",maxWidth:600,marginBottom:40,lineHeight:1.7}}>Cold Sun Global is a certified Salesforce consulting partner. We design and implement intelligent Salesforce systems that connect data, automate work, and deliver measurable outcomes.</p>
         <Link href="/contact" style={{background:S.orange,color:S.white,padding:"14px 28px",borderRadius:8,fontFamily:S.font,fontWeight:600,fontSize:15,textDecoration:"none",display:"inline-block"}}>Talk to a Salesforce Expert →</Link>
       </div>
@@ -27,7 +27,7 @@ export default function SalesforceSolutions() {
     <section style={{padding:"5rem 1.5rem",background:S.offWhite}}>
       <div style={{maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:80,alignItems:"center"}}>
         <div>
-          <h2 style={{fontFamily:S.display,fontWeight:700,fontSize:"clamp(1.6rem,3vw,2.2rem)",color:S.navy,marginBottom:8}}>Streamline, Simplify, and Unite Your Business</h2>
+          <h2 style={{fontFamily:S.font,fontWeight:700,fontSize:"clamp(1.6rem,3vw,2.2rem)",color:S.navy,marginBottom:8}}>Streamline, Simplify, and Unite Your Business</h2>
           <div style={{width:56,height:4,background:S.orange,borderRadius:2,marginBottom:24}}/>
           <p style={{fontFamily:S.font,color:S.grey,lineHeight:1.7,marginBottom:16}}>Salesforce is the world&apos;s highest-rated CRM platform — and in the right hands, it transforms how your entire organization operates. Cold Sun Global brings deep industry expertise to every Salesforce engagement.</p>
           <p style={{fontFamily:S.font,color:S.grey,lineHeight:1.7}}>From sales and service to revenue, assets, and field operations — we connect your enterprise end-to-end with best-practice configurations that maximize time-to-value and ROI.</p>
@@ -46,12 +46,12 @@ export default function SalesforceSolutions() {
     <section style={{padding:"6rem 1.5rem",background:S.white}}>
       <div style={{maxWidth:1200,margin:"0 auto"}}>
         <p style={{fontFamily:S.font,fontWeight:600,fontSize:12,letterSpacing:"0.12em",textTransform:"uppercase",color:S.orange,marginBottom:12}}>Salesforce Services</p>
-        <h2 style={{fontFamily:S.display,fontWeight:700,fontSize:"clamp(1.8rem,3vw,2.5rem)",color:S.navy,marginBottom:8}}>Comprehensive Solutions to Drive Success</h2>
+        <h2 style={{fontFamily:S.font,fontWeight:700,fontSize:"clamp(1.8rem,3vw,2.5rem)",color:S.navy,marginBottom:8}}>Comprehensive Solutions to Drive Success</h2>
         <div style={{width:56,height:4,background:S.orange,borderRadius:2,marginBottom:48}}/>
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24}}>
           {offerings.map(o=>(
             <Link key={o.title} href={o.href} style={{textDecoration:"none",display:"block",padding:32,borderRadius:16,border:`1px solid ${S.greyLight}`,background:S.white}}>
-              <h3 style={{fontFamily:S.display,fontWeight:700,fontSize:"1.05rem",color:S.navy,marginBottom:12}}>{o.title}</h3>
+              <h3 style={{fontFamily:S.font,fontWeight:700,fontSize:"1.05rem",color:S.navy,marginBottom:12}}>{o.title}</h3>
               <p style={{fontFamily:S.font,color:S.grey,fontSize:13,lineHeight:1.7,marginBottom:16}}>{o.desc}</p>
               <span style={{fontFamily:S.font,fontWeight:600,fontSize:13,color:S.orange,display:"flex",alignItems:"center",gap:4}}>Learn more <ArrowRight size={13}/></span>
             </Link>
@@ -62,7 +62,7 @@ export default function SalesforceSolutions() {
 
     <section style={{background:S.navy,padding:"5rem 1.5rem",textAlign:"center"}}>
       <div style={{maxWidth:760,margin:"0 auto"}}>
-        <h2 style={{fontFamily:S.display,fontWeight:700,fontSize:"clamp(1.8rem,3vw,2.5rem)",color:S.white,marginBottom:16}}>Ready to Get More From Salesforce?</h2>
+        <h2 style={{fontFamily:S.font,fontWeight:700,fontSize:"clamp(1.8rem,3vw,2.5rem)",color:S.white,marginBottom:16}}>Ready to Get More From Salesforce?</h2>
         <p style={{fontFamily:S.font,color:"rgba(255,255,255,0.7)",fontSize:"1.05rem",marginBottom:32}}>Schedule a complimentary strategy session with Erik. Walk away with a clear implementation roadmap and ROI projection.</p>
         <Link href="/contact" style={{background:S.orange,color:S.white,padding:"14px 32px",borderRadius:8,fontFamily:S.font,fontWeight:600,fontSize:15,textDecoration:"none",display:"inline-block"}}>Schedule a Strategy Session →</Link>
       </div>

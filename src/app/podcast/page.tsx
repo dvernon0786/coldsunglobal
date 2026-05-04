@@ -78,7 +78,7 @@ const SPOTIFY_SHOW_ID = "2txP3cOET42fPiu8ILj0U4";
 
 export default function Podcast() {
   return (
-    <main style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <main style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
       <PodcastHero spotifyShowId={SPOTIFY_SHOW_ID} />
       <EpisodeCards episodes={episodes} spotifyShowId={SPOTIFY_SHOW_ID} />
 
@@ -97,12 +97,12 @@ export default function Podcast() {
               margin: "0 auto 20px",
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 40, fontWeight: 800, color: "var(--orange)",
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
             }}>
               E
             </div>
             <h3 style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
               fontSize: "1.3rem", fontWeight: 700,
               color: "var(--navy)", margin: "0 0 6px",
             }}>
@@ -124,7 +124,7 @@ export default function Podcast() {
               About the Show
             </p>
             <h2 style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Arial, Helvetica, sans-serif",
               fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
               color: "var(--navy)", fontWeight: 700, margin: "0 0 10px",
             }}>

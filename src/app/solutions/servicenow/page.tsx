@@ -9,10 +9,10 @@ export default function ServiceNow() {
       <section className="hero-grid py-28 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{color:"var(--orange)"}}>ServiceNow</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"'Playfair Display',serif",fontWeight:800}}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"Arial, Helvetica, sans-serif",fontWeight:800}}>
             Modernize How<br/><span style={{color:"var(--orange)"}}>Your Enterprise Works.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             Cold Sun Global deploys ServiceNow for IT service management, HR service delivery, and enterprise workflows — transforming how your teams operate at scale.
           </p>
           <Link href="/contact" className="btn-primary">Talk to a ServiceNow Expert →</Link>
@@ -24,10 +24,10 @@ export default function ServiceNow() {
           <div>
             <p className="section-label mb-3">ServiceNow Practice</p>
             <h2 className="text-3xl md:text-4xl mb-6 accent-line" style={{color:"var(--navy)"}}>Enterprise Workflows That Actually Work</h2>
-            <p className="text-gray-600 leading-relaxed mb-5" style={{fontFamily:"'DM Sans',sans-serif"}}>
+            <p className="text-gray-600 leading-relaxed mb-5" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
               ServiceNow is the enterprise platform for digital workflow transformation — connecting IT, HR, customer service, and security operations on a single platform. Cold Sun Global implements ServiceNow with the same outcome-first philosophy we apply to every engagement.
             </p>
-            <p className="text-gray-600 leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>
+            <p className="text-gray-600 leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
               Our certified ServiceNow consultants understand not just the platform, but the operational challenges of large enterprises — from multi-department service portals to complex ITSM processes and integrated field operations.
             </p>
           </div>
@@ -41,8 +41,8 @@ export default function ServiceNow() {
               {t:"Integration Hub",d:"Connect ServiceNow to Salesforce, NetSuite, and your existing enterprise systems for unified data and seamless workflows."},
             ].map(item => (
               <div key={item.t} className="p-5 rounded-xl border border-gray-100 bg-white card-lift">
-                <h3 className="font-bold mb-1.5" style={{color:"var(--navy)",fontFamily:"'Playfair Display',serif"}}>{item.t}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>{item.d}</p>
+                <h3 className="font-bold mb-1.5" style={{color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{item.t}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{item.d}</p>
               </div>
             ))}
           </div>
@@ -51,8 +51,8 @@ export default function ServiceNow() {
 
       <section className="py-20 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>Ready to Transform Enterprise Operations?</h2>
-          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>Schedule a ServiceNow assessment with the Cold Sun Global team. We&apos;ll map your current workflows and identify the highest-value automation opportunities.</p>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Ready to Transform Enterprise Operations?</h2>
+          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Schedule a ServiceNow assessment with the Cold Sun Global team. We&apos;ll map your current workflows and identify the highest-value automation opportunities.</p>
           <Link href="/contact" className="btn-primary">Book a ServiceNow Assessment →</Link>
         </div>
       </section>

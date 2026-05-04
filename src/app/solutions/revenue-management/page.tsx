@@ -9,10 +9,10 @@ export default function RevenueManagement() {
       <section className="hero-grid py-28 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{color:"var(--orange)"}}>Revenue Management</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"'Playfair Display',serif",fontWeight:800}}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{fontFamily:"Arial, Helvetica, sans-serif",fontWeight:800}}>
             Stop Losing Revenue<br/><span style={{color:"var(--orange)"}}>to Process Gaps.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>
+          <p className="text-white/70 text-xl max-w-2xl mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
             Cold Sun Global streamlines billing, CPQ, subscriptions, and quoting on Salesforce — reducing revenue leakage and accelerating your cash conversion cycle across complex business models.
           </p>
           <Link href="/contact" className="btn-primary">Talk to a Revenue Expert →</Link>
@@ -33,8 +33,8 @@ export default function RevenueManagement() {
               {t:"Salesforce Revenue Cloud",d:"Full Salesforce Revenue Cloud implementation — from initial design to go-live, with ongoing optimization support."},
             ].map(item => (
               <div key={item.t} className="card-lift p-8 rounded-xl border border-gray-100 bg-white">
-                <h3 className="font-bold text-lg mb-3" style={{color:"var(--navy)",fontFamily:"'Playfair Display',serif"}}>{item.t}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed" style={{fontFamily:"'DM Sans',sans-serif"}}>{item.d}</p>
+                <h3 className="font-bold text-lg mb-3" style={{color:"var(--navy)",fontFamily:"Arial, Helvetica, sans-serif"}}>{item.t}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>{item.d}</p>
               </div>
             ))}
           </div>
@@ -43,8 +43,8 @@ export default function RevenueManagement() {
 
       <section className="py-20 px-6" style={{background:"var(--navy)"}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>Eliminate Revenue Leakage</h2>
-          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"'DM Sans',sans-serif"}}>Talk to our revenue management specialists. We&apos;ll identify where your revenue process has gaps — and design a Salesforce solution that closes them.</p>
+          <h2 className="text-3xl md:text-4xl text-white mb-4" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Eliminate Revenue Leakage</h2>
+          <p className="text-white/70 text-lg mb-8" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>Talk to our revenue management specialists. We&apos;ll identify where your revenue process has gaps — and design a Salesforce solution that closes them.</p>
           <Link href="/contact" className="btn-primary">Get a Revenue Audit →</Link>
         </div>
       </section>

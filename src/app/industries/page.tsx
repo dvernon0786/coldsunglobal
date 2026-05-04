@@ -94,10 +94,10 @@ export default function IndustriesIndex() {
       <section className="hero-grid py-28 px-6" style={{ background: "var(--navy)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3" style={{ color: "var(--orange)" }}>Industries</p>
-          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "'Playfair Display',serif", fontWeight: 800 }}>
+          <h1 className="text-4xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 800 }}>
             Deep Vertical Knowledge.<br /><span style={{ color: "var(--orange)" }}>Across 10 Industries.</span>
           </h1>
-          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+          <p className="text-white/70 text-xl max-w-2xl mb-10" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Cold Sun Global doesn&apos;t apply generic consulting methodologies to every sector. We bring industry-specific expertise — understanding the regulatory environment, operational challenges, and technology landscape of the sectors we serve.
           </p>
           <Link href="/contact" className="btn-primary">Find Your Industry Expert →</Link>
@@ -115,7 +115,7 @@ export default function IndustriesIndex() {
           ].map(s => (
             <div key={s.l} className="text-center">
               <div className="stat-number">{s.n}</div>
-              <div className="text-gray-500 text-sm mt-2" style={{ fontFamily: "'DM Sans',sans-serif" }}>{s.l}</div>
+              <div className="text-gray-500 text-sm mt-2" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -135,25 +135,25 @@ export default function IndustriesIndex() {
                 <div className="flex items-start gap-5">
                   <div className="text-4xl flex-shrink-0">{ind.icon}</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "'Playfair Display',serif" }}>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors" style={{ color: "var(--navy)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                       {ind.name}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
                       {ind.desc}
                     </p>
                     {/* Platform tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {ind.platforms.map(p => (
-                        <span key={p} className="text-xs px-2.5 py-1 rounded-full border" style={{ borderColor: "var(--grey-light)", color: "var(--grey-text)", fontFamily: "'DM Sans',sans-serif" }}>
+                        <span key={p} className="text-xs px-2.5 py-1 rounded-full border" style={{ borderColor: "var(--grey-light)", color: "var(--grey-text)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                           {p}
                         </span>
                       ))}
                     </div>
                     {/* Sample clients */}
-                    <p className="text-xs text-gray-400 mb-3" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+                    <p className="text-xs text-gray-400 mb-3" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
                       Clients include: {ind.clients.join(" · ")}
                     </p>
-                    <span className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--orange)", fontFamily: "'DM Sans',sans-serif" }}>
+                    <span className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--orange)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                       Explore {ind.name} <ArrowRight size={14} />
                     </span>
                   </div>
@@ -174,8 +174,8 @@ export default function IndustriesIndex() {
           ].map(item => (
             <div key={item.title} className="p-8 rounded-xl bg-white/5 border border-white/10">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="font-bold text-lg mb-3 text-white" style={{ fontFamily: "'Playfair Display',serif" }}>{item.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed" style={{ fontFamily: "'DM Sans',sans-serif" }}>{item.body}</p>
+              <h3 className="font-bold text-lg mb-3 text-white" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{item.title}</h3>
+              <p className="text-white/50 text-sm leading-relaxed" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>{item.body}</p>
             </div>
           ))}
         </div>
