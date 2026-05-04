@@ -59,7 +59,7 @@ export default function Nav() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0">
-          <img src="/coldsunglobal_logo.png" alt="Cold Sun Global" className="h-12 w-auto" />
+          <img src="/coldsunglobal_logo.svg" alt="Cold Sun Global" style={{ height: 40, width: "auto" }} />
         </Link>
 
         {/* Desktop nav */}
